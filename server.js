@@ -15,12 +15,13 @@ dotenv.config();
 // const PORT = process.env.PORT || 4500;
 
 //esmodule fix
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(new URL(import.meta.url).pathname); // get the directory name
+app.use(express.static(path.join(__dirname, './ecommerce/build')));
 app.use(cors());
 //Middleware
 app.use(express.json());
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, './ecommerce/build')))
+
 
 //DataBase Connect
 connectDB();
