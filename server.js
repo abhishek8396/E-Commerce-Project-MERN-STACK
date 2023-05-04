@@ -15,8 +15,7 @@ dotenv.config();
 // const PORT = process.env.PORT || 4500;
 
 //esmodule fix
-const __filename= fileURLToPath(import.meta.url);
-const __diename= path.dirname(__filename);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(cors());
 //Middleware
 app.use(express.json());
