@@ -34,7 +34,7 @@ app.use('/api/v1/category', categoryRoute);
 app.use('/api/v1/product', productRoute);
 
 app.use("*", (req,res)=>{
-    res.send(path.join(__dirname, './ecommerce/build/index.html'))
+    res.sendFile(path.join(__dirname, './ecommerce/build/index.html'))
 })
 const PORT = 8080;
 app.listen(PORT, ()=>{
