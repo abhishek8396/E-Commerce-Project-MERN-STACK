@@ -8,10 +8,15 @@ import authRoute from "./routes/authRoute.js"
 import categoryRoute from './routes/categoryRoute.js'
 import productRoute from './routes/productRoute.js'
 import path from "path"
+import {fileURLToPath} from 'url';
 const app= express(); 
 //configures env
 dotenv.config();
 // const PORT = process.env.PORT || 4500;
+
+//esmodule fix
+const __filename= fileURLToPath(import.meta.url);
+const __diename= path.dirname(__filename);
 app.use(cors());
 //Middleware
 app.use(express.json());
